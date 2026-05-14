@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ArbiLearn — Web3 & Arbitrum Learning Hub</title>
+  <meta name="description" content="Learn Web3, Arbitrum Layer 2, and blockchain concepts with ArbiLearn." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+<!-- Particles Background -->
+<div id="particles-bg"></div>
+
+<!-- ══════════════ NAVBAR ══════════════ -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">Arbi<span>Learn</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="concepts.html">Concepts</a></li>
+    <li><a href="prices.html">Live Prices</a></li>
+    <li><a href="simulator.html">Simulator</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">🏠 Home</a>
+  <a href="concepts.html">📚 Concepts</a>
+  <a href="prices.html">📈 Live Prices</a>
+  <a href="simulator.html">⛏️ Simulator</a>
+</div>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero-section">
+  <div class="hero-content">
+    <div class="hero-badge reveal">
+      <span class="badge badge-purple">✦ Arbitrum Builder Pods</span>
+    </div>
+    <h1 class="hero-title reveal reveal-delay-1">
+      Learn Web3 &<br/>
+      <span class="gradient-text">Arbitrum Layer 2</span>
+    </h1>
+    <p class="hero-subtitle reveal reveal-delay-2">
+      Your beginner-friendly gateway to understanding blockchain, Ethereum scaling,
+      and the future of decentralized finance — powered by Arbitrum.
+    </p>
+    <div class="hero-actions reveal reveal-delay-3">
+      <a href="concepts.html" class="btn btn-primary">🚀 Explore Web3</a>
+      <a href="simulator.html" class="btn btn-outline">⛏️ Try Simulator</a>
+    </div>
+    <div class="hero-stats reveal">
+      <div class="stat"><span class="stat-num">4</span><span class="stat-label">Interactive Pages</span></div>
+      <div class="stat"><span class="stat-num">Live</span><span class="stat-label">Crypto Prices</span></div>
+      <div class="stat"><span class="stat-num">SHA-256</span><span class="stat-label">Mining Sim</span></div>
+    </div>
+  </div>
+  <div class="hero-visual reveal">
+    <div class="orbit-ring ring-1"></div>
+    <div class="orbit-ring ring-2"></div>
+    <div class="orbit-ring ring-3"></div>
+    <div class="hero-globe">⬡</div>
+    <div class="orbit-dot dot-1">Ξ</div>
+    <div class="orbit-dot dot-2">₿</div>
+    <div class="orbit-dot dot-3">◈</div>
+  </div>
+</section>
+
+<!-- ══════════════ ABOUT LAYER 2 ══════════════ -->
+<section class="section" id="layer2">
+  <div class="container">
+    <p class="section-badge reveal"><span class="badge badge-blue">Why Layer 2?</span></p>
+    <h2 class="section-title reveal">Ethereum Needed a Solution</h2>
+    <p class="section-subtitle reveal">Ethereum is powerful but faces real limitations. Arbitrum solves them.</p>
+
+    <div class="problem-grid reveal">
+      <div class="problem-card glass-card">
+        <div class="icon-circle" style="background:rgba(239,68,68,0.15);border-color:rgba(239,68,68,0.3)">⛽</div>
+        <h3>High Gas Fees</h3>
+        <p>Simple transactions on Ethereum mainnet can cost $20–$100+ during peak times, making small transactions economically unviable.</p>
+      </div>
+      <div class="problem-card glass-card">
+        <div class="icon-circle" style="background:rgba(245,158,11,0.15);border-color:rgba(245,158,11,0.3)">🐢</div>
+        <h3>Slow Throughput</h3>
+        <p>Ethereum processes ~15 transactions per second. Visa handles 24,000 TPS. This bottleneck limits real-world adoption.</p>
+      </div>
+      <div class="problem-card glass-card">
+        <div class="icon-circle" style="background:rgba(124,58,237,0.15);border-color:rgba(124,58,237,0.3)">⚡</div>
+        <h3>Arbitrum's Fix</h3>
+        <p>Arbitrum processes transactions off-chain in batches, then posts proofs to Ethereum — inheriting its security at a fraction of the cost.</p>
+      </div>
+    </div>
+
+    <div class="layer2-explainer reveal glass-card">
+      <div class="explainer-text">
+        <h3>How Arbitrum Works</h3>
+        <ul class="explainer-list">
+          <li>✦ Transactions are processed on Arbitrum's off-chain network</li>
+          <li>✦ Batches are compressed and submitted to Ethereum L1</li>
+          <li>✦ Fraud proofs ensure security without trusting the sequencer</li>
+          <li>✦ Users get Ethereum-level security at 10–100x lower cost</li>
+          <li>✦ Fully EVM-compatible — existing Solidity contracts work as-is</li>
+        </ul>
+        <a href="concepts.html" class="btn btn-primary" style="margin-top:1.5rem">Learn More Concepts →</a>
+      </div>
+      <div class="explainer-visual">
+        <div class="layer-box l2-box">
+          <span>Arbitrum L2</span>
+          <small>Fast &amp; Cheap</small>
+        </div>
+        <div class="layer-arrow">↓ Batched Proofs</div>
+        <div class="layer-box l1-box">
+          <span>Ethereum L1</span>
+          <small>Secure &amp; Decentralized</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FEATURES ══════════════ -->
+<section class="section features-section">
+  <div class="container">
+    <h2 class="section-title reveal">Why Build on Arbitrum?</h2>
+    <p class="section-subtitle reveal">Real-world benefits that make Arbitrum the leading Ethereum L2.</p>
+    <div class="grid-3">
+      <div class="feature-card glass-card reveal reveal-delay-1">
+        <div class="feature-icon">⚡</div>
+        <h3>Fast Transactions</h3>
+        <p>Near-instant finality with thousands of TPS. No more waiting minutes for a simple swap or transfer.</p>
+        <div class="feature-stat">~2,000 TPS</div>
+      </div>
+      <div class="feature-card glass-card reveal reveal-delay-2">
+        <div class="feature-icon">💸</div>
+        <h3>Low Gas Fees</h3>
+        <p>Transactions cost cents instead of dollars. DeFi, NFTs, and gaming become accessible to everyone.</p>
+        <div class="feature-stat">&lt;$0.10 avg</div>
+      </div>
+      <div class="feature-card glass-card reveal reveal-delay-3">
+        <div class="feature-icon">🔒</div>
+        <h3>Ethereum Security</h3>
+        <p>Inherits Ethereum's battle-tested security model. Your assets are protected by the most decentralized network.</p>
+        <div class="feature-stat">L1 Secured</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ BLOCKCHAIN VISUAL ══════════════ -->
+<section class="section chain-section">
+  <div class="container">
+    <h2 class="section-title reveal">How a Blockchain Works</h2>
+    <p class="section-subtitle reveal">Each block links to the previous one — forming an immutable chain.</p>
+    <div class="blockchain-visual reveal">
+      <div class="chain-block">
+        <div class="block-header">Block #1</div>
+        <div class="block-body">
+          <div class="block-field"><span>Data</span><code>Genesis</code></div>
+          <div class="block-field"><span>Hash</span><code class="hash-text">0x00a1b2...</code></div>
+          <div class="block-field"><span>Prev</span><code>0x000000</code></div>
+        </div>
+        <div class="block-status valid">✓ Valid</div>
+      </div>
+      <div class="chain-link">⛓</div>
+      <div class="chain-block">
+        <div class="block-header">Block #2</div>
+        <div class="block-body">
+          <div class="block-field"><span>Data</span><code>Tx: A→B</code></div>
+          <div class="block-field"><span>Hash</span><code class="hash-text">0x00c3d4...</code></div>
+          <div class="block-field"><span>Prev</span><code>0x00a1b2...</code></div>
+        </div>
+        <div class="block-status valid">✓ Valid</div>
+      </div>
+      <div class="chain-link">⛓</div>
+      <div class="chain-block">
+        <div class="block-header">Block #3</div>
+        <div class="block-body">
+          <div class="block-field"><span>Data</span><code>Tx: C→D</code></div>
+          <div class="block-field"><span>Hash</span><code class="hash-text">0x00e5f6...</code></div>
+          <div class="block-field"><span>Prev</span><code>0x00c3d4...</code></div>
+        </div>
+        <div class="block-status valid">✓ Valid</div>
+      </div>
+      <div class="chain-link">⛓</div>
+      <div class="chain-block chain-block-new">
+        <div class="block-header">Block #4</div>
+        <div class="block-body">
+          <div class="block-field"><span>Data</span><code>Mining...</code></div>
+          <div class="block-field"><span>Hash</span><code class="hash-text mining-anim">⛏ pending</code></div>
+          <div class="block-field"><span>Prev</span><code>0x00e5f6...</code></div>
+        </div>
+        <div class="block-status pending">⏳ Mining</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2rem" class="reveal">
+      <a href="simulator.html" class="btn btn-primary">Try Mining Simulator →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo">Arbi<span style="-webkit-text-fill-color:var(--cyan);color:var(--cyan)">Learn</span></div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="concepts.html">Concepts</a>
+      <a href="prices.html">Live Prices</a>
+      <a href="simulator.html">Simulator</a>
+      <a href="https://github.com/vinodprajapati05112005-cell" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+    <div class="footer-badge">🏗️ Arbitrum Builder Pods Batch</div>
+    <p class="footer-text">Built with ❤️ by <strong>Vinod Prajapati</strong> · ArbiLearn © 2025</p>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

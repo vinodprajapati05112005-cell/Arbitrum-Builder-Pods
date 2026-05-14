@@ -1,0 +1,209 @@
+/* ============================================
+   Prices Page Styles
+   ============================================ */
+
+.page-header {
+  position: relative;
+  z-index: 1;
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(6,182,212,0.08) 0%, transparent 100%);
+}
+
+/* ── Dashboard Controls ── */
+.dashboard-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  transition: background 0.3s;
+}
+
+.status-dot.live {
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.status-dot.error {
+  background: var(--red);
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 8px var(--green); }
+  50% { box-shadow: 0 0 16px var(--green); }
+}
+
+/* ── Loading / Error ── */
+.loading-state {
+  text-align: center;
+  padding: 4rem 0;
+  color: var(--text-secondary);
+}
+
+.error-state {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.error-icon { font-size: 3rem; margin-bottom: 1rem; }
+.error-state h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.error-state p { color: var(--text-secondary); margin-bottom: 1.5rem; }
+
+/* ── Price Grid ── */
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* ── Price Card ── */
+.price-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  animation: card-in 0.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.price-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(124,58,237,0.6);
+  box-shadow: var(--glow-purple);
+}
+
+.price-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--gradient);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.price-card:hover::before { opacity: 1; }
+
+.coin-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.coin-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.coin-info { flex: 1; }
+
+.coin-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.coin-symbol {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.coin-price {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.coin-change {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 50px;
+}
+
+.coin-change.positive {
+  color: var(--green);
+  background: rgba(16,185,129,0.12);
+}
+
+.coin-change.negative {
+  color: var(--red);
+  background: rgba(239,68,68,0.12);
+}
+
+.coin-change .arrow { font-size: 0.8rem; }
+
+.coin-updated {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+}
+
+/* ── API Info ── */
+.api-info {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.api-info a {
+  color: var(--cyan);
+  text-decoration: none;
+}
+
+.api-info a:hover { text-decoration: underline; }
+
+/* ── Refresh animation ── */
+.spinning { animation: spin 0.8s linear infinite; display: inline-block; }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .price-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .price-grid { grid-template-columns: 1fr; }
+}

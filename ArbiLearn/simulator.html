@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ArbiLearn — Blockchain Mining Simulator</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/simulator.css" />
+</head>
+<body>
+
+<div id="particles-bg"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">Arbi<span>Learn</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="concepts.html">Concepts</a></li>
+    <li><a href="prices.html">Live Prices</a></li>
+    <li><a href="simulator.html">Simulator</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">🏠 Home</a>
+  <a href="concepts.html">📚 Concepts</a>
+  <a href="prices.html">📈 Live Prices</a>
+  <a href="simulator.html">⛏️ Simulator</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <span class="badge badge-purple reveal">⛏️ Interactive Simulator</span>
+    <h1 class="section-title reveal">Blockchain Mining Simulator</h1>
+    <p class="section-subtitle reveal">
+      Experience Proof of Work mining using real SHA-256 hashing.
+      Mine blocks and see how the chain links together.
+    </p>
+  </div>
+</div>
+
+<!-- EXPLAINER CARDS -->
+<section class="section" style="padding-bottom:0">
+  <div class="container">
+    <div class="grid-4 reveal">
+      <div class="glass-card concept-pill">
+        <div class="pill-icon">🔢</div>
+        <h4>Nonce</h4>
+        <p>A number miners increment to find a valid hash. The "number used once."</p>
+      </div>
+      <div class="glass-card concept-pill">
+        <div class="pill-icon">#️⃣</div>
+        <h4>Hashing</h4>
+        <p>SHA-256 converts any input into a fixed 64-char hex string deterministically.</p>
+      </div>
+      <div class="glass-card concept-pill">
+        <div class="pill-icon">⚡</div>
+        <h4>Proof of Work</h4>
+        <p>Mining stops when the hash starts with "00" — proving computational effort.</p>
+      </div>
+      <div class="glass-card concept-pill">
+        <div class="pill-icon">🔗</div>
+        <h4>Immutability</h4>
+        <p>Changing Block 1 invalidates Block 2 — the chain enforces integrity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCKCHAIN SIMULATOR -->
+<section class="section">
+  <div class="container">
+    <div class="simulator-chain" id="simulator-chain">
+
+      <!-- ── BLOCK 1 ── -->
+      <div class="sim-block glass-card" id="block-1" data-block="1">
+        <div class="sim-block-header">
+          <span class="block-num">Block #1</span>
+          <span class="block-validity" id="validity-1">⏳ Not Mined</span>
+        </div>
+
+        <div class="sim-field">
+          <label for="data-1">Block Data</label>
+          <input type="text" id="data-1" class="sim-input" placeholder="Enter transaction data..." value="Alice → Bob: 5 ETH" />
+        </div>
+
+        <div class="sim-field">
+          <label>Previous Hash</label>
+          <div class="hash-display prev-hash" id="prev-hash-1">
+            <code>0000000000000000000000000000000000000000000000000000000000000000</code>
+          </div>
+        </div>
+
+        <div class="sim-field">
+          <label>Nonce</label>
+          <div class="nonce-display" id="nonce-1">0</div>
+        </div>
+
+        <div class="sim-field">
+          <label>Current Hash</label>
+          <div class="hash-display current-hash" id="hash-1">
+            <code id="hash-text-1">Click "Mine Block" to start...</code>
+          </div>
+        </div>
+
+        <div class="sim-log" id="log-1">
+          <div class="log-line">$ Ready to mine Block #1</div>
+        </div>
+
+        <button class="btn btn-primary mine-btn" id="mine-btn-1" onclick="mineBlock(1)">
+          ⛏️ Mine Block #1
+        </button>
+      </div>
+
+      <!-- Chain link -->
+      <div class="chain-connector" id="connector-1-2">
+        <div class="connector-line"></div>
+        <div class="connector-arrow">→</div>
+        <div class="connector-line"></div>
+      </div>
+
+      <!-- ── BLOCK 2 ── -->
+      <div class="sim-block glass-card" id="block-2" data-block="2">
+        <div class="sim-block-header">
+          <span class="block-num">Block #2</span>
+          <span class="block-validity" id="validity-2">🔒 Waiting for Block #1</span>
+        </div>
+
+        <div class="sim-field">
+          <label for="data-2">Block Data</label>
+          <input type="text" id="data-2" class="sim-input" placeholder="Enter transaction data..." value="Carol → Dave: 2 ETH" />
+        </div>
+
+        <div class="sim-field">
+          <label>Previous Hash <span class="linked-label">(linked from Block #1)</span></label>
+          <div class="hash-display prev-hash" id="prev-hash-2">
+            <code id="prev-hash-text-2">Mine Block #1 first...</code>
+          </div>
+        </div>
+
+        <div class="sim-field">
+          <label>Nonce</label>
+          <div class="nonce-display" id="nonce-2">0</div>
+        </div>
+
+        <div class="sim-field">
+          <label>Current Hash</label>
+          <div class="hash-display current-hash" id="hash-2">
+            <code id="hash-text-2">Mine Block #1 first...</code>
+          </div>
+        </div>
+
+        <div class="sim-log" id="log-2">
+          <div class="log-line">$ Waiting for Block #1 to be mined...</div>
+        </div>
+
+        <button class="btn btn-primary mine-btn" id="mine-btn-2" onclick="mineBlock(2)" disabled>
+          ⛏️ Mine Block #2
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Tamper Demo -->
+    <div class="tamper-demo glass-card reveal">
+      <h3>🔬 Tamper Demo</h3>
+      <p>Edit Block #1's data above after mining both blocks — watch Block #2 become <span style="color:var(--red)">invalid</span> automatically.</p>
+      <div class="tamper-status" id="tamper-status">
+        Mine both blocks to see the immutability demo.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo">Arbi<span style="-webkit-text-fill-color:var(--cyan);color:var(--cyan)">Learn</span></div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="concepts.html">Concepts</a>
+      <a href="prices.html">Live Prices</a>
+      <a href="simulator.html">Simulator</a>
+      <a href="https://github.com/vinodprajapati05112005-cell" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+    <div class="footer-badge">🏗️ Arbitrum Builder Pods Batch</div>
+    <p class="footer-text">Built with ❤️ by <strong>Vinod Prajapati</strong> · ArbiLearn © 2025</p>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script src="js/simulator.js"></script>
+</body>
+</html>

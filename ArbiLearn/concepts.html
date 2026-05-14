@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ArbiLearn — Web3 Concepts</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/concepts.css" />
+</head>
+<body>
+
+<div id="particles-bg"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">Arbi<span>Learn</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="concepts.html">Concepts</a></li>
+    <li><a href="prices.html">Live Prices</a></li>
+    <li><a href="simulator.html">Simulator</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">🏠 Home</a>
+  <a href="concepts.html">📚 Concepts</a>
+  <a href="prices.html">📈 Live Prices</a>
+  <a href="simulator.html">⛏️ Simulator</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <span class="badge badge-purple reveal">📚 Web3 Concepts</span>
+    <h1 class="section-title reveal">Understand the Fundamentals</h1>
+    <p class="section-subtitle reveal">Side-by-side comparisons to help you grasp Web3 concepts quickly.</p>
+  </div>
+</div>
+
+<!-- ══════════════ WEB2 vs WEB3 ══════════════ -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title reveal">Web2 vs Web3</h2>
+    <p class="section-subtitle reveal">The internet is evolving. Here's what changed.</p>
+    <div class="compare-grid reveal">
+      <div class="compare-card web2-card glass-card">
+        <div class="compare-header">
+          <span class="compare-icon">🌐</span>
+          <h3>Web2</h3>
+          <span class="badge badge-blue">Current Internet</span>
+        </div>
+        <ul class="compare-list">
+          <li><span class="icon-x">✗</span> Centralized servers (Google, AWS)</li>
+          <li><span class="icon-x">✗</span> Companies own your data</li>
+          <li><span class="icon-x">✗</span> Single points of failure</li>
+          <li><span class="icon-x">✗</span> Requires trust in intermediaries</li>
+          <li><span class="icon-x">✗</span> Accounts can be banned/censored</li>
+          <li><span class="icon-x">✗</span> Closed-source platforms</li>
+          <li><span class="icon-check">✓</span> Fast and user-friendly</li>
+          <li><span class="icon-check">✓</span> Mature ecosystem</li>
+        </ul>
+      </div>
+      <div class="compare-vs">VS</div>
+      <div class="compare-card web3-card glass-card">
+        <div class="compare-header">
+          <span class="compare-icon">⛓️</span>
+          <h3>Web3</h3>
+          <span class="badge badge-purple">Decentralized Internet</span>
+        </div>
+        <ul class="compare-list">
+          <li><span class="icon-check">✓</span> Decentralized nodes worldwide</li>
+          <li><span class="icon-check">✓</span> You own your data &amp; assets</li>
+          <li><span class="icon-check">✓</span> No single point of failure</li>
+          <li><span class="icon-check">✓</span> Trustless via smart contracts</li>
+          <li><span class="icon-check">✓</span> Censorship-resistant</li>
+          <li><span class="icon-check">✓</span> Open-source &amp; transparent</li>
+          <li><span class="icon-x">✗</span> Still maturing UX</li>
+          <li><span class="icon-x">✗</span> Steeper learning curve</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ ETH vs BTC ══════════════ -->
+<section class="section alt-section">
+  <div class="container">
+    <h2 class="section-title reveal">Ethereum vs Bitcoin</h2>
+    <p class="section-subtitle reveal">Both are blockchains — but built for different purposes.</p>
+    <div class="compare-grid reveal">
+      <div class="compare-card glass-card">
+        <div class="compare-header">
+          <span class="compare-icon">₿</span>
+          <h3>Bitcoin</h3>
+          <span class="badge badge-cyan">Digital Gold</span>
+        </div>
+        <ul class="compare-list">
+          <li><span class="icon-check">✓</span> Created in 2009 by Satoshi</li>
+          <li><span class="icon-check">✓</span> Store of value / digital gold</li>
+          <li><span class="icon-check">✓</span> Fixed supply: 21 million BTC</li>
+          <li><span class="icon-check">✓</span> Proof of Work consensus</li>
+          <li><span class="icon-check">✓</span> Most secure blockchain</li>
+          <li><span class="icon-x">✗</span> Limited smart contract support</li>
+          <li><span class="icon-x">✗</span> Slower: ~7 TPS</li>
+          <li><span class="icon-x">✗</span> Not programmable</li>
+        </ul>
+      </div>
+      <div class="compare-vs">VS</div>
+      <div class="compare-card glass-card">
+        <div class="compare-header">
+          <span class="compare-icon">Ξ</span>
+          <h3>Ethereum</h3>
+          <span class="badge badge-purple">World Computer</span>
+        </div>
+        <ul class="compare-list">
+          <li><span class="icon-check">✓</span> Created in 2015 by Vitalik</li>
+          <li><span class="icon-check">✓</span> Programmable blockchain</li>
+          <li><span class="icon-check">✓</span> Smart contracts &amp; DApps</li>
+          <li><span class="icon-check">✓</span> Proof of Stake (eco-friendly)</li>
+          <li><span class="icon-check">✓</span> DeFi, NFTs, DAOs ecosystem</li>
+          <li><span class="icon-check">✓</span> EVM: universal standard</li>
+          <li><span class="icon-x">✗</span> Higher gas fees on L1</li>
+          <li><span class="icon-x">✗</span> More complex</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PUBLIC vs PRIVATE KEY ══════════════ -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title reveal">Public Key vs Private Key</h2>
+    <p class="section-subtitle reveal">The cryptographic foundation of blockchain identity.</p>
+    <div class="compare-grid reveal">
+      <div class="compare-card glass-card">
+        <div class="compare-header">
+          <span class="compare-icon">🔓</span>
+          <h3>Public Key</h3>
+          <span class="badge badge-green">Share Freely</span>
+        </div>
+        <ul class="compare-list">
+          <li><span class="icon-check">✓</span> Your wallet address</li>
+          <li><span class="icon-check">✓</span> Safe to share publicly</li>
+          <li><span class="icon-check">✓</span> Used to receive funds</li>
+          <li><span class="icon-check">✓</span> Derived from private key</li>
+          <li><span class="icon-check">✓</span> Anyone can verify signatures</li>
+          <li><span class="icon-check">✓</span> Like your bank account number</li>
+        </ul>
+        <div class="key-example">
+          <code>0x742d35Cc6634C0532925a3b8D4C9E3Df9f4b2...</code>
+        </div>
+      </div>
+      <div class="compare-vs">VS</div>
+      <div class="compare-card glass-card">
+        <div class="compare-header">
+          <span class="compare-icon">🔐</span>
+          <h3>Private Key</h3>
+          <span class="badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">Never Share!</span>
+        </div>
+        <ul class="compare-list">
+          <li><span class="icon-check">✓</span> Secret 256-bit number</li>
+          <li><span class="icon-check">✓</span> Signs transactions</li>
+          <li><span class="icon-check">✓</span> Proves ownership</li>
+          <li><span class="icon-check">✓</span> Controls your wallet</li>
+          <li><span class="icon-x">✗</span> NEVER share with anyone</li>
+          <li><span class="icon-x">✗</span> Lost = lost funds forever</li>
+        </ul>
+        <div class="key-example danger">
+          <code>⚠️ 5KJvsngHeMpm884wtkJNzQGaCErckhHJBGFsvd...</code>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ BLOCKCHAIN vs DATABASE ══════════════ -->
+<section class="section alt-section">
+  <div class="container">
+    <h2 class="section-title reveal">Blockchain vs Traditional Database</h2>
+    <p class="section-subtitle reveal">When to use which — and why it matters.</p>
+    <div class="compare-grid reveal">
+      <div class="compare-card glass-card">
+        <div class="compare-header">
+          <span class="compare-icon">🗄️</span>
+          <h3>Traditional DB</h3>
+          <span class="badge badge-blue">Centralized</span>
+        </div>
+        <ul class="compare-list">
+          <li><span class="icon-check">✓</span> Fast read/write operations</li>
+          <li><span class="icon-check">✓</span> Easy to update/delete data</li>
+          <li><span class="icon-check">✓</span> Controlled by one entity</li>
+          <li><span class="icon-check">✓</span> Low cost to operate</li>
+          <li><span class="icon-x">✗</span> Single point of failure</li>
+          <li><span class="icon-x">✗</span> Data can be altered/deleted</li>
+          <li><span class="icon-x">✗</span> Requires trust in operator</li>
+          <li><span class="icon-x">✗</span> Vulnerable to hacks</li>
+        </ul>
+      </div>
+      <div class="compare-vs">VS</div>
+      <div class="compare-card glass-card">
+        <div class="compare-header">
+          <span class="compare-icon">⛓️</span>
+          <h3>Blockchain</h3>
+          <span class="badge badge-purple">Decentralized</span>
+        </div>
+        <ul class="compare-list">
+          <li><span class="icon-check">✓</span> Immutable — data never deleted</li>
+          <li><span class="icon-check">✓</span> Transparent &amp; auditable</li>
+          <li><span class="icon-check">✓</span> No central authority</li>
+          <li><span class="icon-check">✓</span> Tamper-proof records</li>
+          <li><span class="icon-check">✓</span> Trustless verification</li>
+          <li><span class="icon-x">✗</span> Slower than traditional DB</li>
+          <li><span class="icon-x">✗</span> Higher storage cost</li>
+          <li><span class="icon-x">✗</span> Data cannot be deleted</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo">Arbi<span style="-webkit-text-fill-color:var(--cyan);color:var(--cyan)">Learn</span></div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="concepts.html">Concepts</a>
+      <a href="prices.html">Live Prices</a>
+      <a href="simulator.html">Simulator</a>
+      <a href="https://github.com/vinodprajapati05112005-cell" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+    <div class="footer-badge">🏗️ Arbitrum Builder Pods Batch</div>
+    <p class="footer-text">Built with ❤️ by <strong>Vinod Prajapati</strong> · ArbiLearn © 2025</p>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

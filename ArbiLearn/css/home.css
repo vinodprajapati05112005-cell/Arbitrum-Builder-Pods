@@ -1,0 +1,358 @@
+/* ============================================
+   Home Page Styles
+   ============================================ */
+
+/* ── Hero ── */
+.hero-section {
+  position: relative;
+  z-index: 1;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-content { flex: 1; max-width: 600px; }
+
+.hero-badge { margin-bottom: 1.25rem; }
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+  letter-spacing: -1px;
+}
+
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-num {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Hero Visual / Orbit ── */
+.hero-visual {
+  flex: 0 0 380px;
+  position: relative;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbit-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  animation: orbit-spin linear infinite;
+}
+
+.ring-1 { width: 200px; height: 200px; animation-duration: 8s; }
+.ring-2 { width: 300px; height: 300px; animation-duration: 14s; border-color: rgba(59,130,246,0.2); }
+.ring-3 { width: 380px; height: 380px; animation-duration: 20s; border-color: rgba(6,182,212,0.15); }
+
+@keyframes orbit-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+.hero-globe {
+  font-size: 5rem;
+  color: var(--purple-light);
+  text-shadow: 0 0 40px rgba(124,58,237,0.8);
+  animation: pulse-glow 3s ease-in-out infinite;
+  z-index: 2;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { text-shadow: 0 0 40px rgba(124,58,237,0.8); }
+  50% { text-shadow: 0 0 80px rgba(124,58,237,1), 0 0 120px rgba(59,130,246,0.5); }
+}
+
+.orbit-dot {
+  position: absolute;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  z-index: 3;
+  animation: orbit-dot linear infinite;
+}
+
+.dot-1 { color: var(--blue-light); animation-duration: 8s; transform-origin: 0 100px; }
+.dot-2 { color: #f59e0b; animation-duration: 14s; transform-origin: 0 150px; }
+.dot-3 { color: var(--purple-light); animation-duration: 20s; transform-origin: 0 190px; }
+
+@keyframes orbit-dot {
+  from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+/* ── Problem Grid ── */
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.problem-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.problem-card p { color: var(--text-secondary); font-size: 0.9rem; }
+
+/* ── Layer 2 Explainer ── */
+.layer2-explainer {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.explainer-text { flex: 1; }
+.explainer-text h3 { font-size: 1.4rem; margin-bottom: 1rem; }
+
+.explainer-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.explainer-list li {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  padding-left: 0.5rem;
+}
+
+.explainer-visual {
+  flex: 0 0 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.layer-box {
+  width: 100%;
+  padding: 1.25rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  font-weight: 700;
+}
+
+.layer-box span { display: block; font-size: 1rem; }
+.layer-box small { font-size: 0.75rem; font-weight: 400; opacity: 0.7; }
+
+.l2-box {
+  background: rgba(124,58,237,0.2);
+  border: 1px solid rgba(124,58,237,0.5);
+  color: var(--purple-light);
+  animation: float-box 3s ease-in-out infinite;
+}
+
+.l1-box {
+  background: rgba(59,130,246,0.2);
+  border: 1px solid rgba(59,130,246,0.5);
+  color: var(--blue-light);
+}
+
+@keyframes float-box {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.layer-arrow {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* ── Features ── */
+.features-section { background: rgba(124,58,237,0.03); }
+
+.feature-card {
+  text-align: center;
+  padding: 2.5rem 1.75rem;
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.feature-stat {
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  background: rgba(124,58,237,0.15);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--purple-light);
+}
+
+/* ── Blockchain Visual ── */
+.chain-section { background: rgba(59,130,246,0.03); }
+
+.blockchain-visual {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scrollbar-width: thin;
+}
+
+.chain-block {
+  flex: 0 0 180px;
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.chain-block:hover {
+  border-color: rgba(124,58,237,0.6);
+  box-shadow: var(--glow-purple);
+}
+
+.block-header {
+  background: rgba(124,58,237,0.2);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--purple-light);
+  text-align: center;
+}
+
+.block-body { padding: 0.75rem; }
+
+.block-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+  font-size: 0.75rem;
+}
+
+.block-field span { color: var(--text-muted); }
+.block-field code {
+  font-family: 'Courier New', monospace;
+  color: var(--cyan);
+  font-size: 0.7rem;
+  background: rgba(6,182,212,0.1);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
+.block-status {
+  text-align: center;
+  padding: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.block-status.valid { color: var(--green); background: rgba(16,185,129,0.1); }
+.block-status.pending { color: #f59e0b; background: rgba(245,158,11,0.1); }
+
+.chain-link {
+  font-size: 1.5rem;
+  color: var(--purple);
+  flex-shrink: 0;
+  animation: chain-pulse 2s ease-in-out infinite;
+}
+
+@keyframes chain-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; text-shadow: 0 0 10px var(--purple); }
+}
+
+.chain-block-new { border-color: rgba(245,158,11,0.4); }
+
+.mining-anim {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+.section-badge { text-align: center; margin-bottom: 0.75rem; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .hero-section { flex-direction: column; text-align: center; padding: 3rem 1.5rem; }
+  .hero-visual { flex: 0 0 280px; height: 280px; }
+  .ring-3 { width: 280px; height: 280px; }
+  .hero-actions { justify-content: center; }
+  .hero-stats { justify-content: center; }
+  .problem-grid { grid-template-columns: 1fr; }
+  .layer2-explainer { flex-direction: column; }
+  .explainer-visual { flex: none; width: 100%; max-width: 280px; }
+}
+
+@media (max-width: 768px) {
+  .blockchain-visual { gap: 0.25rem; }
+  .chain-block { flex: 0 0 150px; }
+}

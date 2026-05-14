@@ -1,0 +1,321 @@
+/* ============================================
+   Simulator Page Styles
+   ============================================ */
+
+.page-header {
+  position: relative;
+  z-index: 1;
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(124,58,237,0.08) 0%, transparent 100%);
+}
+
+/* ── Concept Pills ── */
+.concept-pill {
+  text-align: center;
+  padding: 1.5rem 1.25rem;
+}
+
+.pill-icon {
+  font-size: 1.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.concept-pill h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--purple-light);
+}
+
+.concept-pill p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ── Simulator Chain ── */
+.simulator-chain {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+/* ── Block Card ── */
+.sim-block {
+  flex: 0 0 420px;
+  padding: 1.75rem;
+  transition: var(--transition);
+}
+
+.sim-block.valid-block {
+  border-color: rgba(16,185,129,0.5);
+  box-shadow: 0 0 20px rgba(16,185,129,0.2);
+}
+
+.sim-block.invalid-block {
+  border-color: rgba(239,68,68,0.5);
+  box-shadow: 0 0 20px rgba(239,68,68,0.2);
+}
+
+.sim-block.mining-block {
+  border-color: rgba(245,158,11,0.5);
+  box-shadow: 0 0 20px rgba(245,158,11,0.2);
+  animation: mining-pulse 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes mining-pulse {
+  from { box-shadow: 0 0 10px rgba(245,158,11,0.2); }
+  to   { box-shadow: 0 0 30px rgba(245,158,11,0.5); }
+}
+
+/* ── Block Header ── */
+.sim-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.block-num {
+  font-size: 1.1rem;
+  font-weight: 800;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.block-validity {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 50px;
+  background: rgba(100,116,139,0.15);
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.block-validity.valid {
+  background: rgba(16,185,129,0.15);
+  color: var(--green);
+}
+
+.block-validity.invalid {
+  background: rgba(239,68,68,0.15);
+  color: var(--red);
+}
+
+.block-validity.mining {
+  background: rgba(245,158,11,0.15);
+  color: #f59e0b;
+}
+
+/* ── Fields ── */
+.sim-field {
+  margin-bottom: 1rem;
+}
+
+.sim-field label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.4rem;
+}
+
+.linked-label {
+  color: var(--cyan);
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.sim-input {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.9rem;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-family: var(--font-main);
+  transition: var(--transition);
+  outline: none;
+}
+
+.sim-input:focus {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgba(124,58,237,0.15);
+}
+
+/* ── Hash Display ── */
+.hash-display {
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(6,182,212,0.2);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.9rem;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.hash-display code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.72rem;
+  color: var(--cyan);
+  word-break: break-all;
+  display: block;
+}
+
+.hash-display.valid-hash {
+  border-color: rgba(16,185,129,0.4);
+  background: rgba(16,185,129,0.05);
+}
+
+.hash-display.valid-hash code { color: var(--green); }
+
+.hash-display.invalid-hash {
+  border-color: rgba(239,68,68,0.4);
+  background: rgba(239,68,68,0.05);
+}
+
+.hash-display.invalid-hash code { color: var(--red); }
+
+/* ── Nonce Display ── */
+.nonce-display {
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--purple-light);
+  padding: 0.4rem 0;
+  transition: var(--transition);
+}
+
+/* ── Mining Log (terminal) ── */
+.sim-log {
+  background: #0a0a0a;
+  border: 1px solid rgba(124,58,237,0.2);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem;
+  height: 100px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.72rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--purple) transparent;
+}
+
+.log-line {
+  color: #4ade80;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.log-line.error { color: var(--red); }
+.log-line.info  { color: var(--cyan); }
+.log-line.warn  { color: #f59e0b; }
+
+/* ── Mine Button ── */
+.mine-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.mine-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* ── Chain Connector ── */
+.chain-connector {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 0 0.5rem;
+  margin-top: 120px;
+}
+
+.connector-line {
+  width: 20px;
+  height: 2px;
+  background: var(--border);
+  transition: background 0.3s;
+}
+
+.connector-arrow {
+  font-size: 1.2rem;
+  color: var(--purple);
+  padding: 0 0.25rem;
+  transition: color 0.3s;
+}
+
+.chain-connector.linked .connector-line { background: var(--green); }
+.chain-connector.linked .connector-arrow { color: var(--green); }
+
+/* ── Tamper Demo ── */
+.tamper-demo {
+  margin-top: 2rem;
+  padding: 1.5rem 1.75rem;
+}
+
+.tamper-demo h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.tamper-demo p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.tamper-status {
+  padding: 0.75rem 1rem;
+  background: rgba(100,116,139,0.1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+.tamper-status.chain-valid {
+  background: rgba(16,185,129,0.1);
+  border-color: rgba(16,185,129,0.3);
+  color: var(--green);
+}
+
+.tamper-status.chain-broken {
+  background: rgba(239,68,68,0.1);
+  border-color: rgba(239,68,68,0.3);
+  color: var(--red);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .simulator-chain {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sim-block { flex: none; width: 100%; }
+
+  .chain-connector {
+    flex-direction: column;
+    margin: 0;
+    padding: 0.5rem 0;
+    align-items: center;
+  }
+
+  .connector-line { width: 2px; height: 20px; }
+  .connector-arrow { transform: rotate(90deg); }
+}
